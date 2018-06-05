@@ -18,6 +18,10 @@ module.exports = {
     return steemAction.discussionBFD("single-content", element, 1, message);
   },
 
+  trailUpvote: function (message) {
+  	return steemAction.upvoteWithAllAccounts(message);
+  },
+
   getCreatedContent: function (message) {
     let tag = message.content.split(" ")
     tag.shift()
