@@ -13,6 +13,7 @@
     "delete-all" : "**$delete-all**\nDeletes all content in post-saved.json. (For curator only)",
     "info" : "**$info [user]**\nTakes as parameter a Steem username without @ and displays its info",
     "more-info" : "**$more-info [user]**\nDisplays a personalised list of links to popular Steem blockchain browsing apps. ***Example : $more-info planetenamek*** - will display https://steemworld.org/@planetenamek etc...",
-    "clear" : "**$clear**\nDeletes messages from the channel you are on. **- Ex : $clear 30 -** (For admin only)"
+    "clear" : "**$clear**\nDeletes messages from the channel you are on. **- Ex : $clear 30 -** (For admin only)",
+    "vote" : "**$vote 50 Insert_Link_Here** - Upvote the linked post with the corresponding weight"
   }
 }          
