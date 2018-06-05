@@ -19,7 +19,7 @@ module.exports = {
   },
 
   trailUpvote: function (message) {
-  	return steemAction.upvoteWithAllAccounts(message);
+    return steemAction.upvoteWithAllAccounts(message);
   },
 
   getCreatedContent: function (message) {
