@@ -246,10 +246,10 @@ module.exports = {
   },
 
   upvoteWithAllAccounts: function(message){
-  	let element = message.content.split(" ");
-    var useless = element.shift();              
-    var weight = element.shift() + "00";
-    	weight = parseInt(weight);      
+    let element = message.content.split(" ");
+    var useless = element.shift();
+    var opeWeight = element.shift() + "00";
+    var weight = parseInt(opeWeight);      
     var link = element.shift();
     var ope = link.split("/");
     if (ope.length == 6){ //If Steemit Link
