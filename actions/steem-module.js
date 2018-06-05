@@ -245,6 +245,48 @@ module.exports = {
     });
   },
 
+  upvoteWithAllAccounts: function(message){
+  	let element = message.content.split(" ");
+    var useless = element.shift();              
+    var weight = element.shift() + "00";
+    	weight = parseInt(weight);      
+    var link = element.shift();
+    var ope = link.split("/");
+    if (ope.length == 6){ //If Steemit Link
+      permLink = ope[5];
+      ope1 = link.split("@");         
+      useless2 = ope1.shift();         
+      ope2 = ope1.shift();  
+      ope3 = ope2.split("/");
+      author = ope3.shift();
+      voteWithAllAccounts();
+    }
+    if (ope.length == 5){ //If Busy Link
+      permLink = ope[4];
+      ope1 = link.split("@");         
+      useless2 = ope1.shift();         
+      ope2 = ope1.shift();  
+      ope3 = ope2.split("/");
+      author = ope3.shift();
+      voteWithAllAccounts();
+    }
+    
+    function voteWithAllAccounts(){
+      if(weight == 0 || weight > 10000 || weight == null || permLink == null || author == null) {
+        message.channel.send("Error : Bad request");
+      }
+      else{
+        for(var x = 0;x < config.accounts.length;x++){
+          var testing = config.accounts[x];
+          steem.broadcast.vote(testing.key, testing.name, author, permLink, weight, function(err, result) {
+            console.log(err, result);
+          });
+        }
+        return message.channel.send("nice post");
+      }       
+    }
+  }
+
   /**
    * Retreive Steem account info from the blockchain and renders it on a Discord channel
    * @param username
