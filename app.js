@@ -31,7 +31,7 @@ bot.on("message", async message =>
       return cmd.getCreatedContent(message);
 
     case "vote":
-      return cmd.trailVote(message);
+      return cmd.trailUpvote(message);
 
     case "last-post":
       return cmd.getLastPost(message);
